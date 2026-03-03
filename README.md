@@ -1,38 +1,49 @@
-# 🍽️ SmartQR Menu: Digital Dining Solution
+# qr_menu
+🍽️ Dijital Menü Sistemi (PHP & MySQL)
+Bu proje, kafe ve restoranlar için tasarlanmış, modern, yönetilebilir ve tamamen duyarlı (responsive) bir dijital menü sistemidir. Node.js/React mimarisinden PHP/MySQL mimarisine, tüm paylaşımlı hosting (cPanel, Plesk vb.) ortamlarında sorunsuz çalışacak şekilde taşınmıştır.
 
-**SmartQR Menu** is a modern web application designed to help restaurants, cafes, and bars digitize their menus. By scanning a QR code, customers can instantly browse items, descriptions, and prices directly on their own devices without downloading any apps.
+✨ Öne Çıkan Özellikler
+📱 Kullanıcı Arayüzü (Menu)
+Modern Tasarım: Tailwind CSS ve Google Fonts (Inter & Outfit) ile premium "Glassmorphism" estetiği.
+Dinamik Ana Sayfa: Admin panelinden değiştirilebilen karşılama başlığı, metni ve büyük kahraman (hero) görseli.
+Ürün Detay Popup: Ürünlere tıklandığında açılan, büyük görsel ve detaylı açıklama sunan modal penceresi.
+Sıralama: Kategoriler ve ürünler admin panelinde belirlenen sıraya göre listelenir.
+Öneri ve Şikayet: Müşterilerin doğrudan geri bildirim gönderebileceği entegre form.
+Instagram Entegrasyonu: Admin panelinden aktif edilebilen, şık animasyonlu Instagram "Takip Et" butonu.
+🔐 Yönetim Paneli (Admin)
+Tek Ekran Deneyimi: Alpine.js ile sayfa yenilemeden sekmeler arası geçiş.
+Kategori Yönetimi: Sınırsız kategori ekleme, düzenleme ve sıralama.
+Ürün Yönetimi: Resim yükleme, fiyatlandırma, detaylı açıklama ve kategorilere atama.
+Geri Bildirim Takibi: Gelen öneri ve şikayetlerin okunması, yönetilmesi ve silinmesi.
+Gelişmiş Ayarlar: Mekan ismi, ana sayfa içerikleri ve sosyal medya linkleri kolayca güncellenebilir.
+🛡️ Güvenlik ve Koruma
+Footer Koruması: Sistem yapımcı bilgilerinin (MCD Yazılım) silinmesini önleyen "Emeğe Saygı" mekanizması.
+Oturum Yönetimi: PHP Sessions ile güvenli admin girişi.
+PDO Veritabanı: SQL Injection saldırılarına karşı güvenli veritabanı iletişimi.
+🛠️ Kurulum Adımları
+Veritabanı Hazırlığı:
 
-## 📋 Key Features
-* **Touchless Experience:** Secure, hygienic, and fast access to the menu via QR scan.
-* **Dynamic Management:** Update categories, items, and pricing instantly through the admin panel.
-* **Responsive Design:** Optimized for all screen sizes, from small smartphones to tablets.
-* **Lightweight & Fast:** Built for high performance even on slower mobile connections.
+Hosting panelinizden yeni bir MySQL veritabanı ve kullanıcısı oluşturun.
+database.sql dosyasındaki sorguları veritabanınızda çalıştırın.
+Dosya Düzenleme:
 
----
+config.php dosyasını açın ve aşağıdaki kısımları kendi veritabanı bilgilerinizle doldurun:
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'veritabani_adi');
+define('DB_USER', 'kullanici_adi');
+define('DB_PASS', 'sifreniz');
+Yükleme:
 
-## 🛠️ Installation Guide (cPanel / Plesk)
+Tüm dosyaları sunucunuzun ana dizinine veya bir alt klasöre (örneğin /menu) yükleyin.
+uploads/ klasörünün yazılabilir (write permission - 755 veya 777) olduğundan emin olun.
+Giriş:
 
-This project is optimized for shared hosting environments. Since it connects to your existing database, no SQL import is necessary.
-
-### Option 1: cPanel Setup
-1. **Upload:** Use **File Manager** to upload the project files to your `public_html` or a specific directory.
-2. **Extract:** Unzip the files in the target folder.
-3. **PHP Version:** Ensure your hosting is running **PHP 7.4 or 8.x**.
-4. **Config:** Update your database credentials in the `config.php` or `db_connect.php` file.
-
-### Option 2: Plesk Setup
-1. **Upload:** Navigate to the **Files** tab and upload your ZIP file to the `httpdocs` directory.
-2. **Extract:** Use the built-in "Extract Files" tool in the Plesk file manager.
-3. **PHP Settings:** Check the **PHP Settings** icon to ensure the version is compatible.
-4. **Permissions:** If you see any 403 errors, use the "Fix Permissions" tool in the dashboard.
-
----
-
-## ⚙️ Database Configuration
-> [!NOTE]
-> This repository does not include a `.sql` dump. It is designed to work with your existing database architecture. Please ensure your database host and user permissions are correctly set in the configuration files.
-
----
-
-## 🛡️ Support
-If you encounter issues with image uploads or menu loading, verify your folder permissions (CHMOD 755) and check your hosting error logs.
+Yönetim paneline siteadresi.com/login.php üzerinden erişebilirsiniz.
+Kullanıcı Adı: admin
+Şifre: admin123
+🎨 Teknoloji Yığını
+Backend: PHP 7.4+ (PDO ile)
+Database: MySQL
+Frontend: HTML5, Vanilla JavaScript, Alpine.js
+Styling: Tailwind CSS (CDN)
+Icons: Lucide Icons
